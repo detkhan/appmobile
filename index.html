@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Put It</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="js/TimeCircles.js"></script>
+<script type="text/javascript" src="js/fusioncharts.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+
+<script type="text/javascript" src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
+<script>
+    //listen to shake event
+    var shakeEvent = new Shake({threshold: 15});
+    shakeEvent.start();
+    window.addEventListener('shake', function(){
+        alert("Shaked");
+    }, false);
+
+    //stop listening
+    function stopShake(){
+        shakeEvent.stop();
+    }
+
+    //check if shake is supported or not.
+    if(!("ondevicemotion" in window)){alert("Not Supported");}
+</script>
+
+<body>
+<div data-role="page" id="home" data-cache="true">
+    <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
+     <img src="images\put.png" style="padding:10px;">
+     <!--   <h1 style="margin: 3px 0 0 50px; text-align:left; font-size:20px;">Put It</h1>-->
+    </div>
+    <!-- /header --><br><br>
+    <div data-role="content" class="jqm-content">
+          <div class="ui-body ui-body-a ui-corner-all">
+          <p>
+          <input name="text-basic" id="username" type="text" value="" placeholder="username" >
+
+          </p>
+          <p>
+          <input name="text-basic" id="password" type="password" value="" placeholder="password" >
+          </p>
+          <p>
+          <input name="text-basic" id="re-password" type="password" value="" placeholder="re-password" >
+          </p>
+          <p id="gender">
+            <label style="font-size:14px; font-family:arial;"><input name="radio1" id="radio1" type="radio" value="male">Male</label>
+            <label style="font-size:14px; font-family:arial;"><input name="radio1" id="radio1" type="radio" value="female">Female</label>
+          </p>
+          <p>
+            <input name="number-1" id="age" type="number" value="" data-clear-btn="false" placeholder="confirm age">
+          </p>
+          <p id="check_agree1">
+          <label style="font-size:12px; font-family:arial;"><input name="text-basic" id="check_agree" type="checkbox">I Agree Terms and Conditions</label>
+          </p>
+            <a id="login" class="ui-btn ui-shadow ui-corner-all" href="#">Sign In</a>
+            <a id="regis" class="text-center" href="#"><p style="font-size:12px; text-decoration:none; color:#03809E;">Create Account</p></a>
+            <a id="comfirm-regis" class="ui-btn ui-shadow ui-corner-all" href="#">Sign Up</a>
+
+        </div>
+    </div><!-- /content end -->
+</div><!-- /page -->
+
+
+
+
+
+<div data-role="page" id="homepage" data-cache="true">
+    <div data-role="header" data-theme="a" data-position="fixed" data-tap-toggle="false">
+
+      <a href="#mypanel" data-iconpos="notext"><img src="images\men.png" style="width:23px;"></a>
+      <a href="#config" data-iconpos="notext"><img src="images\tim.png" style="width:25px;"></a>
+        <h1 style="margin: 3px 0 0 50px; text-align:left; font-size:20px;">Put It</h1>
+       <!--  <img src="images\put.png" style="padding:10px; margin-left:40px;"> -->
+    </div>
+    <div data-role="panel" id="mypanel">
+    <!-- panel content goes here -->
+    <ul data-role="listview">
+        <li data-icon="delete"><a href="#" data-rel="close">Put It</a></li>
+        <li data-icon="user"><a id="profile" href="#" data-rel="close">Profile</a></li>
+         <li><a id="agenda" href="#" data-rel="close">Add Task</a></li>
+          <li><a id="process" href="#" data-rel="close">Process</a></li>
+            <li><a id="result" href="#" data-rel="close">Summary</a></li>
+            </ul>
+</div>
+
+
+    <!-- /header -->
+    <div data-role="content" class="jqm-content">
+        <div id="appview">
+
+          </div>
+        </div>
+    </div><!-- /content -->
+</div>
+
+
+<!-- /page -->
+
+
+<div data-role="page" id="notification" data-close-btn="right" data-dialog="true">
+    <div data-role="header">
+    <h1>Notification</h1>
+    </div>
+    <div role="main" class="ui-content">
+    <h1 id="noti_head"></h1>
+    <p id="noti_body"></p>
+    </div><!-- /content -->
+  </div>
+
+
+<!-- /page -->
+
+
+
+  <div data-role="page" id="config" data-close-btn="no" data-dialog="true">
+
+      <div data-role="header" style="background:#444444 ; color:#fff; text-shadow:none;">
+      <h1>Set the Time</h1>
+      </div>
+
+      <div role="main" class="ui-content">
+        <form id="formsetting">
+        <fieldset data-role="controlgroup">
+         
+        <label for="radio-choice-1">
+                <input type="radio" name="radioName" id="radio-choice-1" value="600" checked="checked">10 Min</label>
+        <label for="radio-choice-2">
+                <input type="radio" name="radioName" id="radio-choice-2" value="1200">20 Min</label>
+        <label for="radio-choice-3">
+                <input type="radio" name="radioName" id="radio-choice-3" value="1800">30 Min</label>
+        </fieldset>
+        </form>
+        <button id="configbtn" class="ui-btn ui-corner-all">Submit</button>
+      </div><!-- /content -->
+    </div><!-- /page -->
+
+
+
+<script type="text/javascript" src="js/my-app.js"></script>
+</body>
+</html>

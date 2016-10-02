@@ -1,0 +1,99 @@
+header {
+	padding-bottom: 50px;
+}
+
+
+.ui-bar-a {
+	background-color: #444444;
+	height: 60px;
+	position: fixed;
+	
+}
+
+img {
+	width: 30px;
+	padding: 5px;
+	border-radius: 18px;
+}
+
+h1 {
+	padding-bottom: 50px;
+	text-shadow: none;
+	color: #fff;
+	
+
+}
+
+
+
+.ui-corner-all {
+	border-radius: 0;
+}
+
+
+
+#regis {
+	text-decoration: none;
+	color: #444444;
+}
+
+#login {
+	background-color: #444444;
+	width: 50%;
+	color: #fff;
+	text-shadow: none;
+	border-radius: 0;
+	margin: 0 auto;
+}
+
+#comfirm-regis {
+	background-color: #444444;
+	width: 50%;
+	color: #fff;
+	text-shadow: none;
+	border-radius: 0;
+	margin: 0 auto;
+}
+
+
+a.ui-link.ui-btn.ui-shadow.ui-corner-all {
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+
+.ui-btn-left{
+	left: 0;
+	padding-left:8px; 
+}
+
+
+/*timer*/
+
+
+#container-independency{
+    width: 90%;
+    max-width: 1620px;
+    background-color: #b8860b;
+    clear: both;
+    padding: 1%;
+    display: none;
+    box-sizing: border-box;
+}
+
+#independency{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    background-color: #ffb6c1;
+    box-sizing: border-box;
+}
+
+#highcharts_container{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+}
